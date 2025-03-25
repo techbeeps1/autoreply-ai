@@ -32,6 +32,7 @@ function autoreply_ai_process_autoreply_form()
             $user_email = get_option('autoreply_email');
             $user_key = substr(hash('sha256', $user_email), 0, 16);
             update_option('autoreply_ai_api_key', openssl_encrypt(sanitize_text_field(wp_unslash($_POST['autoreply_ai_api_key'])), 'AES-256-CBC', $user_key, 0, $user_key));
+			update_option('autoreply_ai_activated', true);
         }
 
         if (isset($_POST['autoreply_ai_word_limit']) and (absint($_POST['autoreply_ai_word_limit'] <= 50) and absint($_POST['autoreply_ai_word_limit'] >= 20))) {
@@ -104,6 +105,9 @@ function autoreply_ai_settings_html()
                     <th><label for="autoreply_ai_api_key">OpenAI API Key</label></th>
                     <td><input type="text" id="autoreply_ai_api_key" name="autoreply_ai_api_key" placeholder="<?php echo esc_html($api_key) ?> *********************************************" class="regular-text">
                         <a href="https://platform.openai.com/api-keys"> Generate API Key</a>
+						<div class="tooltip">Your API key is fully protected and encrypted
+  <span class="tooltiptext">Your API key is securely stored in your website’s database in an encrypted format, ensuring that no one can access or view it. With robust protection in place, you can store your API key safely and without any risk.</span>
+</div>
                     </td>
                 </tr>
                 <tr>
@@ -144,7 +148,7 @@ function autoreply_ai_settings_html()
                     </td>
                 </tr>
                 <tr>
-                    <th><label for="selected_comment_based">AI will generate a comment based on :</label></th>
+                    <th><label for="selected_comment_based">AI will generate a comment based on:</label></th>
                     <td>
                         <select id="selected_comment_based" name="selected_comment_based">
                             <option value="content" <?php selected($selected_comment_based, 'content'); ?>>Post Content</option>

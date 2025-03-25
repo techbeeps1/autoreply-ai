@@ -4,7 +4,7 @@ Tags:  auto reply, auto comment reply, ai comment reply, comment AI bots, Automa
 Requires at least: 5.0  
 Tested up to: 6.7  
 Requires PHP: 7.4  
-Stable tag: 1.1  
+Stable tag: 1.2  
 License: GPL-2.0+  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -50,10 +50,14 @@ Yes, the plugin supports WordPress comments, BuddyPress, wpForo, ForumWP, Asgaro
 * Improved security by preventing direct file access.
 * Code optimization and minor bug fixes.
 
-== Upgrade Notice ==  
-= 1.1 =  
-Added External Services section. Users may need to update API settings for compatibility.
+= 1.2 =
+* Removed pop-up activation form
+* Removed newsletter form
+* Added API key protection and encryption message
 
+== Upgrade Notice ==  
+= 1.2 =  
+This update removes the pop-up activation form and newsletter form while adding a message confirming that API keys are fully protected and encrypted.
 
 == External Services ==  
 This plugin connects to external services to generate AI-based replies.  
@@ -63,8 +67,3 @@ This plugin connects to external services to generate AI-based replies.
    - **Data sent:** The user's message query and API key.  
    - **Terms of Service:** https://openai.com/terms  
    - **Privacy Policy:** https://openai.com/privacy  
-
-2. **Custom API Endpoint** (https://www.plugins.techbeeps.com/autoreply-ai/)  
-   - **What it does:** collects user information for newsletter subscriptions.  
-   - **Data sent:** Name, email, and website URL (for newsletter or subscription purposes). 
-   - **Terms & Privacy:** (https://www.plugins.techbeeps.com/autoreply-ai-terms-and-conditions/)

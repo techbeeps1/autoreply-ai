@@ -3,7 +3,7 @@
 Plugin Name: AutoReply AI
 Plugin URI:  https://plugins.techbeeps.com/
 Description: A plugin that enables automatic replies using AI, allowing admins to configure API keys, word limits, and user selection.
-Version:     1.1
+Version:     1.2
 Author:      Techbeeps
 Author URI:  https://techbeeps.co.in/
 Text Domain: autoreply-ai
@@ -13,7 +13,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 if (! defined('ABSPATH')) { exit; }
 
-define('AUTO_REPLY_AI_TBS', '1.1');
+define('AUTO_REPLY_AI_TBS', '1.2');
 define('AUTO_REPLY_AI_TBS_PATH', plugin_dir_path(__FILE__));
 define('AUTO_REPLY_AI_TBS_URL',  __FILE__);
 
